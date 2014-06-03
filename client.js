@@ -18,13 +18,13 @@ client.on('data', function(data) {
         {
             var command = params[1];
             var swid = params[2];
-            if(command === 'on')
+            if(command === 'On')
             {
                 console.log("Turning on");
                 exec("tdtool -n " + swid, null);
             }
 
-            if(command === 'off')
+            if(command === 'Off')
             {
                  console.log("Turning off");
                 exec("tdtool -f " + swid, null);
