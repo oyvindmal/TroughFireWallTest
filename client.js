@@ -10,7 +10,27 @@ client.connect(5000, 'dhgw.cloudapp.net', function() {
 
 client.on('data', function(data) {
         console.log('Received: ' + data);
-        console.log(data.toString().split("/"));
+        var params = data.toString().split("/");
+        
+         var controllerName = params[0];
+
+        if(controllerName == 'Telldus')
+        {
+            var command = params[1];
+            var swid = params[2];
+            if(command == 'on')
+            {
+                console.log("Turning on");
+                exec("tdtool -n " + swid, null);
+            }
+
+            if(command == 'off')
+            {
+                 console.log("Turning off");
+                exec("tdtool -f " + swid, null);
+            }
+            
+        }
 //      client.destroy(); // kill client after server's response
 });
 
