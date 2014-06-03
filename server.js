@@ -4,7 +4,7 @@ var http = require('http');
 
 var server = net.createServer(function (socket) {
   socket.write('Echo server\r\n');
-  console.log(socket.address());
+  console.log(server.address());
   http.createServer(function (req, res) {
   res.writeHead(200, {'Content-Type': 'text/plain'});
   res.end('Hello World\n');
