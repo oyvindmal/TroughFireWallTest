@@ -11,7 +11,7 @@ client.connect(5000, 'dhgw.cloudapp.net', function() {
 client.on('data', function(data) {
         console.log('Received: ' + data);
         var params = data.toString().split("/");
-        
+        console.log(params);
          var controllerName = params[0];
 
         if(controllerName === 'Telldus')
