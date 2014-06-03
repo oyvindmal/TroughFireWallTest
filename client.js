@@ -14,17 +14,17 @@ client.on('data', function(data) {
         
          var controllerName = params[0];
 
-        if(controllerName == 'Telldus')
+        if(controllerName === 'Telldus')
         {
             var command = params[1];
             var swid = params[2];
-            if(command == 'on')
+            if(command === 'on')
             {
                 console.log("Turning on");
                 exec("tdtool -n " + swid, null);
             }
 
-            if(command == 'off')
+            if(command === 'off')
             {
                  console.log("Turning off");
                 exec("tdtool -f " + swid, null);
