@@ -6,6 +6,7 @@ var server = net.createServer(function (socket) {
   socket.write('Echo server\r\n');
   console.log(server.address());
   http.createServer(function (req, res) {
+       res.writeHead(200, {'Content-Type': 'text/plain', 'Access-Control-Allow-Origin' : '*'});
      var params = req.url.substring(1).split('/');
      
       var controllerName = params[0];
