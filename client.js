@@ -10,11 +10,7 @@ client.connect(5000, 'dhgw.cloudapp.net', function() {
 
 client.on('data', function(data) {
         console.log('Received: ' + data);
-      /*  if(data == "something")
-        {
-            console.log("Doing something");
-            exec("tdtool -n 4", null)
-        }*/
+        console.log(data.split("/"));
 //      client.destroy(); // kill client after server's response
 });
 
