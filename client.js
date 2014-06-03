@@ -10,7 +10,7 @@ client.connect(5000, 'dhgw.cloudapp.net', function() {
 
 client.on('data', function(data) {
         console.log('Received: ' + data);
-        console.log(data.ToString().split("/"));
+        console.log(data.toString().split("/"));
 //      client.destroy(); // kill client after server's response
 });
 
